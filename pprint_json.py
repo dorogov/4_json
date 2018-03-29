@@ -1,13 +1,17 @@
 import json
-
+from sys import argv
 
 def load_data(filepath):
-    pass
+    with open(filepath, 'r') as file:
+        return json.load(file)
 
 
 def pretty_print_json(data):
-    pass
+    return json.dumbs(data, ensure_ascii=False, indent=4, sort_keys=True)
 
 
 if __name__ == '__main__':
-    pass
+    try:
+        print(pretty_print_json(load_data(argv[1])))
+    except IOError:
+        print('file not found!')
