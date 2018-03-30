@@ -1,5 +1,5 @@
 import json
-from sys import argv
+
 
 def load_data(filepath):
     with open(filepath, 'r') as file:
