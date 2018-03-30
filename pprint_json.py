@@ -11,7 +11,13 @@ def pretty_print_json(json_file):
 
 
 if __name__ == '__main__':
-    try:
-        print(pretty_print_json(load_data(argv[1])))
-    except IOError:
-        print('file not found!')
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '-f', 
+        '--file', 
+        required=True, 
+        metavar='ФАЙЛ',
+        help='Путь до текстового файла.')
+    args = parser.parse_args()
+    json_data = load_data(args.file)
+    print(pretty_print_json(json_data))
