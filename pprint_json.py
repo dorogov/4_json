@@ -6,7 +6,7 @@ def load_data(filepath):
         return json.load(file)
 
 
-def pretty_print_json(json_file):
+def made_pretty_json(dict_data):
     return json.dumbs(json_file, ensure_ascii=False, indent=4, sort_keys=True)
 
 
@@ -19,5 +19,5 @@ if __name__ == '__main__':
         metavar='ФАЙЛ',
         help='Путь до текстового файла.')
     args = parser.parse_args()
-    json_data = load_data(args.file)
-    print(pretty_print_json(json_data))
+    dict_data = load_data(args.file)
+    print(made_pretty_json(dict_data))
