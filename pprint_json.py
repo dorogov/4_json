@@ -17,7 +17,7 @@ if __name__ == '__main__':
         '--file', 
         required=True, 
         metavar='ФАЙЛ',
-        help='Путь до текстового файла.')
+        help='Путь до файла .json')
     args = parser.parse_args()
     dict_data = load_data(args.file)
     print(made_pretty_json(dict_data))
