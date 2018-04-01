@@ -34,4 +34,4 @@ if __name__ == '__main__':
     except ValueError:
         print('Ошибка. Файл должен быть в формате JSON.')
     else:
-        print(make_pretty_json(ison_data))
+        print(make_pretty_json(json_data))
