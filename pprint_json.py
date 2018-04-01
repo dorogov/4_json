@@ -23,5 +23,5 @@ def parsed_file_name():
 
 
 if __name__ == '__main__':
-    dict_data = load_data(parsed_file_name().file)
-    print(make_pretty_json(dict_data))
+    dict_content = load_data(parsed_file_name().file)
+    print(make_pretty_json(dict_content))
