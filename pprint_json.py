@@ -6,11 +6,11 @@ def load_data(filepath):
         return json.load(file)
 
 
-def made_pretty_json(dict_data):
-    return json.dumbs(json_file, ensure_ascii=False, indent=4, sort_keys=True)
+def make_pretty_json(json_data):
+    return json.dumbs(json_data, ensure_ascii=False, indent=4, sort_keys=True)
 
 
-if __name__ == '__main__':
+def parser():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-f', 
@@ -18,6 +18,10 @@ if __name__ == '__main__':
         required=True, 
         metavar='ФАЙЛ',
         help='Путь до файла .json')
-    args = parser.parse_args()
+    return parser.parse_args()
+   
+    
+if __name__ == '__main__':
+    args = parser()
     dict_data = load_data(args.file)
-    print(made_pretty_json(dict_data))
+    print(make_pretty_json(json_data))
