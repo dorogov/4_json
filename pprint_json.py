@@ -11,7 +11,7 @@ def make_pretty_json(json_content):
     return json.dumps(json_content, ensure_ascii=False, indent=4, sort_keys=True)
 
 
-def parsed_file_args():
+def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-f',
@@ -24,7 +24,7 @@ def parsed_file_args():
 
 if __name__ == '__main__':
     try:
-        json_data = load_data(parsed_file_args().file)
+        json_data = load_data(get_args().file)
     except IndexError:
         print('Ошибка! Вы не указали путь к файлу JSON.')
         print('Сработает, если написать "python pprint_json.py <путь к файлу>"')
